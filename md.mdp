@@ -1,0 +1,47 @@
+integrator               = md
+dt                       = 0.002
+nsteps                   = 100000000
+nstcomm                  = 100
+nstcalcenergy            = 100
+nstxout                  = 1000
+nstvout                  = 1000
+nstenergy                = 1000
+nstlog                   = 1000
+nstlist                  = 40
+ns-type                  = grid
+cutoff-scheme            = Verlet
+vdw-modifier             = force-switch
+rlist                    = 1.2
+rvdw                     = 1.2
+rvdw-switch              = 1.0
+coulombtype              = PME
+rcoulomb                 = 1.2
+DispCorr                 = no
+vdwtype                  = cut-off
+fourierspacing           = 0.12
+pme-order                = 4
+
+Tcoupl                   =  V-rescale
+tc-grps                  =  Protein_UNL    Water_and_ions
+tau-t                    =  0.1     0.1
+ref-t                    =  300     300
+
+Pcoupl                   = parrinello-rahman
+Pcoupltype               = isotropic
+tau-p                    = 2.0
+ref-p                    = 1.0
+compressibility          = 4.5e-5
+refcoord-scaling         = com
+
+pbc                      = xyz
+gen-vel                  = no
+gen-temp                 = 300
+gen-seed                 = -1
+
+constraints              = all-bonds
+continuation             = yes
+constraint-algorithm     = lincs
+lincs-iter               = 1
+lincs-order              = 4
+
+
